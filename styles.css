@@ -236,32 +236,57 @@ nav ul li a.btn-primary::after {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #2e86de, #1c74c7, #0c61b0);
+    background-image: url('images/maintenance-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
     display: flex;
     align-items: center;
     text-align: center;
     margin-top: 0;
     padding-top: 80px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-content h2 {
     font-size: 3rem;
     margin-bottom: 20px;
-    animation: fadeInDown 1s;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeInUp 1s;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero-buttons {
-    animation: fadeIn 1.5s;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .hero-buttons a {
@@ -388,7 +413,9 @@ nav ul li a.btn-primary::after {
 .placeholder-img {
     width: 100%;
     height: 400px;
-    background-color: #d1d8e0;
+    background-image: url('images/about-image.jpg');
+    background-size: cover;
+    background-position: center;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
@@ -669,13 +696,16 @@ footer {
     }
     
     .hero-content h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
-    .hero-buttons a {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
